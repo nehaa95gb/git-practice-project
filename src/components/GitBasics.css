@@ -1,0 +1,16 @@
+.basics-flow { display: grid; width: min(100%, 900px); margin-inline: auto; grid-template-columns: minmax(0, 1fr) 76px minmax(0, 1fr); grid-template-rows: auto 42px auto 42px auto; align-items: stretch; }
+.basics-flow .basic-step { min-height: 190px; }
+.basics-flow .basic-step:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+.basics-flow .basic-step:nth-of-type(2) { grid-column: 3; grid-row: 1; }
+.basics-flow .basic-step:nth-of-type(3) { grid-column: 3; grid-row: 3; }
+.basics-flow .basic-step:nth-of-type(4) { grid-column: 3; grid-row: 5; }
+.basic-connector { position: relative; display: grid; place-items: center; color: var(--cyan); }
+.basic-connector::before { content: ""; position: absolute; background: linear-gradient(90deg, var(--purple), var(--cyan)); box-shadow: 0 0 10px rgba(88, 217, 248, .48); }
+.basic-connector span { position: relative; z-index: 1; display: grid; place-items: center; width: 27px; height: 27px; border: 1px solid rgba(88, 217, 248, .36); border-radius: 50%; background: #141b2c; box-shadow: 0 0 0 5px rgba(88, 217, 248, .04); font-size: 1rem; }
+.basic-connector-right { grid-column: 2; grid-row: 1; }
+.basic-connector-right::before { left: 0; right: 0; height: 1px; }
+.basic-connector-down { grid-column: 3; }
+.basic-connector-down::before { top: 0; bottom: 0; width: 1px; background: linear-gradient(var(--purple), var(--cyan)); }
+.basic-connector-first { grid-row: 2; }
+.basic-connector-second { grid-row: 4; }
+@media (max-width: 720px) { .basics-flow { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 37px auto 37px auto 37px auto; }.basics-flow .basic-step { min-height: 150px; }.basics-flow .basic-step:nth-of-type(1) { grid-column: 1; grid-row: 1; }.basics-flow .basic-step:nth-of-type(2) { grid-column: 1; grid-row: 3; }.basics-flow .basic-step:nth-of-type(3) { grid-column: 1; grid-row: 5; }.basics-flow .basic-step:nth-of-type(4) { grid-column: 1; grid-row: 7; }.basic-connector-right, .basic-connector-down { grid-column: 1; }.basic-connector-right { grid-row: 2; }.basic-connector-first { grid-row: 4; }.basic-connector-second { grid-row: 6; }.basic-connector-right::before, .basic-connector-down::before { top: 0; bottom: 0; left: 50%; right: auto; width: 1px; height: auto; background: linear-gradient(var(--purple), var(--cyan)); } }

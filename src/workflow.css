@@ -1,0 +1,17 @@
+@media (max-width: 980px) {
+  .workflow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 20px;
+  }
+
+  .workflow-connector { display: none; }
+  .workflow-step { width: auto; }
+}
+
+@media (max-width: 520px) {
+  .workflow { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 12px; }
+  .workflow-panel { padding-inline: 16px; }
+  .workflow-name { font-size: .76rem; }
+  .workflow-command { font-size: .61rem; }
+}
